@@ -1,0 +1,70 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Single_Cycle_Processor_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package typedefs
+# 
+# Top level modules:
+# 	--none--
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RegFile
+# 
+# Top level modules:
+# 	RegFile
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Reg
+# 
+# Top level modules:
+# 	Reg
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mux2x1
+# 
+# Top level modules:
+# 	Mux2x1
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mem
+# 
+# Top level modules:
+# 	Mem
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Controller
+# -- Importing package typedefs
+# 
+# Top level modules:
+# 	Controller
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU
+# -- Importing package typedefs
+# 
+# Top level modules:
+# 	ALU
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Data_Mem
+# 
+# Top level modules:
+# 	Data_Mem
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SingleCycle_Top
+# -- Importing package typedefs
+# 
+# Top level modules:
+# 	SingleCycle_Top
+# 

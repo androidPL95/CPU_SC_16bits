@@ -1,0 +1,1170 @@
+Analysis & Synthesis report for Single_Cycle_Processor
+Thu Jul 04 20:09:06 2024
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Reg:pc
+ 12. Parameter Settings for User Entity Instance: Mem:inst_mem
+ 13. Parameter Settings for User Entity Instance: RegFile:reg_file
+ 14. Parameter Settings for User Entity Instance: ALU:my_alu
+ 15. Parameter Settings for User Entity Instance: Reg:aux
+ 16. Parameter Settings for User Entity Instance: Data_Mem:data_mem
+ 17. Port Connectivity Checks: "Mux2x1:store_pc_mux"
+ 18. Port Connectivity Checks: "Mux2x1:sum_imm_mux"
+ 19. Port Connectivity Checks: "Mux2x1:mem_bypass_mux"
+ 20. Port Connectivity Checks: "Data_Mem:data_mem"
+ 21. Port Connectivity Checks: "Mux2x1:alu_bypass_mux"
+ 22. Port Connectivity Checks: "Mux2x1:alu_imm_mux"
+ 23. Port Connectivity Checks: "Mem:inst_mem"
+ 24. Port Connectivity Checks: "Mux2x1:pc_mux"
+ 25. Port Connectivity Checks: "Controller:control_block"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 04 20:09:06 2024       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; Single_Cycle_Processor                      ;
+; Top-level Entity Name              ; SingleCycle_Top                             ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 70                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                  ;
++------------------------------------------------------------------+--------------------+------------------------+
+; Option                                                           ; Setting            ; Default Value          ;
++------------------------------------------------------------------+--------------------+------------------------+
+; Device                                                           ; 10M50DAF256C7G     ;                        ;
+; Top-level entity name                                            ; SingleCycle_Top    ; Single_Cycle_Processor ;
+; Family name                                                      ; MAX 10             ; Cyclone V              ;
+; Use smart compilation                                            ; Off                ; Off                    ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                     ;
+; Enable compact report table                                      ; Off                ; Off                    ;
+; Restructure Multiplexers                                         ; Auto               ; Auto                   ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                    ;
+; Preserve fewer node names                                        ; On                 ; On                     ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable                 ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001           ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993              ;
+; State Machine Processing                                         ; Auto               ; Auto                   ;
+; Safe State Machine                                               ; Off                ; Off                    ;
+; Extract Verilog State Machines                                   ; On                 ; On                     ;
+; Extract VHDL State Machines                                      ; On                 ; On                     ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                    ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                     ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                     ;
+; Parallel Synthesis                                               ; On                 ; On                     ;
+; DSP Block Balancing                                              ; Auto               ; Auto                   ;
+; NOT Gate Push-Back                                               ; On                 ; On                     ;
+; Power-Up Don't Care                                              ; On                 ; On                     ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                    ;
+; Remove Duplicate Registers                                       ; On                 ; On                     ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                    ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                    ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                    ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                    ;
+; Ignore SOFT Buffers                                              ; On                 ; On                     ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                    ;
+; Optimization Technique                                           ; Balanced           ; Balanced               ;
+; Carry Chain Length                                               ; 70                 ; 70                     ;
+; Auto Carry Chains                                                ; On                 ; On                     ;
+; Auto Open-Drain Pins                                             ; On                 ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                    ;
+; Auto ROM Replacement                                             ; On                 ; On                     ;
+; Auto RAM Replacement                                             ; On                 ; On                     ;
+; Auto DSP Block Replacement                                       ; On                 ; On                     ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                   ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                     ;
+; Strict RAM Replacement                                           ; Off                ; Off                    ;
+; Allow Synchronous Control Signals                                ; On                 ; On                     ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                    ;
+; Auto RAM Block Balancing                                         ; On                 ; On                     ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                    ;
+; Auto Resource Sharing                                            ; Off                ; Off                    ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                    ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                    ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                     ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                    ;
+; Timing-Driven Synthesis                                          ; On                 ; On                     ;
+; Report Parameter Settings                                        ; On                 ; On                     ;
+; Report Source Assignments                                        ; On                 ; On                     ;
+; Report Connectivity Checks                                       ; On                 ; On                     ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                    ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                      ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation     ;
+; HDL message level                                                ; Level2             ; Level2                 ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                    ;
+; Clock MUX Protection                                             ; On                 ; On                     ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                    ;
+; Block Design Naming                                              ; Auto               ; Auto                   ;
+; SDC constraint protection                                        ; Off                ; Off                    ;
+; Synthesis Effort                                                 ; Auto               ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                     ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                    ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium                 ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                   ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                     ;
++------------------------------------------------------------------+--------------------+------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; typedefs.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv                 ;         ;
+; SingleCycle_Top.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv          ;         ;
+; RegFile.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv                  ;         ;
+; Reg.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv                      ;         ;
+; Mux2x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv                   ;         ;
+; Mem.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv                      ;         ;
+; Controller.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv               ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv                      ;         ;
+; Data_Mem.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv                 ;         ;
+; initial_memory_contents.txt      ; yes             ; Auto-Found File              ; C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/initial_memory_contents.txt ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 70    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 70    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
+; |SingleCycle_Top           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |SingleCycle_Top    ; SingleCycle_Top ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; Reg:aux|aux[1..9]                      ; Stuck at GND due to stuck port data_in      ;
+; Reg:pc|aux[1..15]                      ; Stuck at GND due to stuck port data_in      ;
+; Data_Mem:data_mem|file[9][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[8][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[7][0]           ; Lost fanout                                 ;
+; Data_Mem:data_mem|file[6][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[5][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[4][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[3][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[2][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[1][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Data_Mem:data_mem|file[0][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Reg:aux|aux[0]                         ; Lost fanout                                 ;
+; Reg:pc|aux[0]                          ; Lost fanout                                 ;
+; Total Number of Removed Registers = 36 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                            ;
++----------------+---------------------------+---------------------------------------------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register                                    ;
++----------------+---------------------------+---------------------------------------------------------------------------+
+; Reg:aux|aux[1] ; Stuck at GND              ; Data_Mem:data_mem|file[9][0], Data_Mem:data_mem|file[8][0],               ;
+;                ; due to stuck port data_in ; Data_Mem:data_mem|file[6][0], Data_Mem:data_mem|file[5][0],               ;
+;                ;                           ; Data_Mem:data_mem|file[4][0], Data_Mem:data_mem|file[3][0], Reg:pc|aux[0] ;
+; Reg:aux|aux[4] ; Stuck at GND              ; Data_Mem:data_mem|file[2][0], Data_Mem:data_mem|file[1][0],               ;
+;                ; due to stuck port data_in ; Data_Mem:data_mem|file[0][0], Reg:aux|aux[0]                              ;
++----------------+---------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:pc ;
++----------------+-------+----------------------------+
+; Parameter Name ; Value ; Type                       ;
++----------------+-------+----------------------------+
+; WIDTH          ; 16    ; Signed Integer             ;
++----------------+-------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mem:inst_mem ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 16    ; Signed Integer                   ;
+; DEPTH          ; 1024  ; Signed Integer                   ;
+; ADD_SIZE       ; 10    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegFile:reg_file ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                       ;
+; DEPTH          ; 32    ; Signed Integer                       ;
+; ADDR_SIZE      ; 5     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:my_alu ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; WIDTH          ; 16    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:aux ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; WIDTH          ; 16    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Data_Mem:data_mem ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                        ;
+; DEPTH          ; 1024  ; Signed Integer                        ;
+; ADD_SIZE       ; 10    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:store_pc_mux"                                                                                                                                                               ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:sum_imm_mux"                                                                                                                                                                 ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a     ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; a[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; b     ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out   ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:mem_bypass_mux"                                                                                                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Data_Mem:data_mem"                                                                                                                                                                       ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; addr       ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (10 bits) it drives.  The 6 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out[15..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; leds       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (10 bits) it drives; bit(s) "leds[15..10]" have no fanouts                                                        ;
+; hex0       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex0[15..8]" have no fanouts                                                          ;
+; hex1       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex1[15..8]" have no fanouts                                                          ;
+; hex2       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex2[15..8]" have no fanouts                                                          ;
+; hex3       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex3[15..8]" have no fanouts                                                          ;
+; hex4       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex4[15..8]" have no fanouts                                                          ;
+; hex5       ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (8 bits) it drives; bit(s) "hex5[15..8]" have no fanouts                                                          ;
+; switchs    ; Input  ; Warning  ; Input port expression (10 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "switchs[15..10]" will be connected to GND.                                ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:alu_bypass_mux"                                                                                                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:alu_imm_mux"                                                                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mem:inst_mem"                                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; wdata       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; we          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1:pc_mux"                                                                                                                                                                     ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "Controller:control_block" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; op   ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 70                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Jul 04 20:08:53 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Single_Cycle_Processor -c Single_Cycle_Processor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file typedefs.sv
+    Info (12022): Found design unit 1: typedefs (SystemVerilog) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_singlecycle.sv
+    Info (12023): Found entity 1: tb_clock_generator File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/tb_SingleCycle.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file singlecycle_top_tb.sv
+    Info (12023): Found entity 1: SingleCycle_Top_tb File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file singlecycle_top.sv
+    Info (12023): Found entity 1: SingleCycle_Top File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: RegFile File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file reg.sv
+    Info (12023): Found entity 1: Reg File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1.sv
+    Info (12023): Found entity 1: Mux2x1 File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mem.sv
+    Info (12023): Found entity 1: Mem File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file controller.sv
+    Info (12023): Found entity 1: Controller File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: ALU File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file data_mem.sv
+    Info (12023): Found entity 1: Data_Mem File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 3
+Info (12127): Elaborating entity "SingleCycle_Top" for the top level hierarchy
+Warning (10030): Net "op" at SingleCycle_Top.sv(33) has no driver or initial value, using a default initial value '0' File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 33
+Info (12128): Elaborating entity "Controller" for hierarchy "Controller:control_block" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 62
+Info (12128): Elaborating entity "Mux2x1" for hierarchy "Mux2x1:pc_mux" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 69
+Info (12128): Elaborating entity "Reg" for hierarchy "Reg:pc" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 75
+Info (12128): Elaborating entity "Mem" for hierarchy "Mem:inst_mem" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 84
+Warning (10230): Verilog HDL assignment warning at Mem.sv(27): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv Line: 27
+Warning (10850): Verilog HDL warning at Mem.sv(40): number of words (7) in memory file does not match the number of elements in the address range [0:9] File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv Line: 40
+Info (10041): Inferred latch for "aux_out" at Mem.sv(26) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv Line: 26
+Info (12128): Elaborating entity "RegFile" for hierarchy "RegFile:reg_file" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 94
+Info (10041): Inferred latch for "out2[0]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[1]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[2]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[3]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[4]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[5]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[6]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[7]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[8]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[9]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[10]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[11]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[12]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[13]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[14]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out2[15]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[0]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[1]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[2]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[3]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[4]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[5]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[6]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[7]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[8]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[9]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[10]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[11]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[12]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[13]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[14]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (10041): Inferred latch for "out1[15]" at RegFile.sv(29) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:my_alu" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 109
+Info (12128): Elaborating entity "Data_Mem" for hierarchy "Data_Mem:data_mem" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 139
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(50): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(53): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 53
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(54): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(55): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(56): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(57): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 57
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(58): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at Data_Mem.sv(59): truncated value with size 16 to match size of target (1) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 59
+Warning (10850): Verilog HDL warning at Data_Mem.sv(76): number of words (7) in memory file does not match the number of elements in the address range [0:9] File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 76
+Warning (10855): Verilog HDL warning at Data_Mem.sv(75): initial value for variable file should be constant File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 75
+Info (10041): Inferred latch for "aux_out" at Data_Mem.sv(49) File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 49
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "store_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "store_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "store_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "sel_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "store_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "sel_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "sel_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 19
+    Warning (12110): Net "alu_imm_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_imm_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 24
+    Warning (12110): Net "alu_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "alu_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 26
+    Warning (12110): Net "mem_bypass_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "mem_bypass_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 29
+    Warning (12110): Net "store_pc_out[15]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[14]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[13]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[12]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[11]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[10]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[9]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[8]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[7]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[6]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[5]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[4]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[3]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[2]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+    Warning (12110): Net "store_pc_out[1]" is missing source, defaulting to GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 30
+Warning (14026): LATCH primitive "Mem:inst_mem|aux_out" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv Line: 26
+Warning (14026): LATCH primitive "Data_Mem:data_mem|aux_out" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv Line: 49
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[0]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[1]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[2]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[3]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[4]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[5]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[6]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[7]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[8]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[9]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[10]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[11]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[12]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[13]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[14]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out1[15]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (14026): LATCH primitive "RegFile:reg_file|out2[0]" is permanently enabled File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv Line: 29
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDS[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[8]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "LEDS[9]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 6
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 7
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 8
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 9
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 10
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 11
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 13
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 3
+    Warning (15610): No output dependent on input pin "RST" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv Line: 5
+Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 58 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 597 warnings
+    Info: Peak virtual memory: 4738 megabytes
+    Info: Processing ended: Thu Jul 04 20:09:06 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
+
+

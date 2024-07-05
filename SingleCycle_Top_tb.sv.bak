@@ -1,0 +1,30 @@
+module SingleCycle_Top_tb;
+
+    // Declaração de sinais de teste
+    logic clk;
+    SingleCycle_Top uut(
+        .clk(clk)
+    );
+
+    // Geração de clock
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // Gera um clock de 10 unidades de tempo
+    end
+
+    // Testes
+    initial begin
+        // Inicialize sinais
+        // ... Adicione seus casos de teste aqui ...
+
+        // Termina a simulação após um determinado tempo
+        #100 $finish;
+    end
+
+    // Gerar arquivo de saída para visualização
+    initial begin
+        $dumpfile("SingleCycle_Top.vcd");
+        $dumpvars(0, SingleCycle_Top_tb);
+    end
+
+endmodule
