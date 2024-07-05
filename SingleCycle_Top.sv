@@ -70,7 +70,8 @@ module SingleCycle_Top import typedefs::*;
 
 	Reg pc(
 		.in(sel_pc_out), 
-		.clk(CLK), 
+		.clk(CLK),
+		.rst(RST), 
 		.out(pc_out)
 	);
 	
@@ -79,7 +80,8 @@ module SingleCycle_Top import typedefs::*;
 		.addr(pc_out), 
 		.clk(CLK), 
 		.wdata('0), 
-		.we('0), 
+		.we('0),
+		.rst(RST),
 		.out(im_out)
 	);
 
@@ -88,7 +90,8 @@ module SingleCycle_Top import typedefs::*;
 		.a2(im_out[4:0]), 
 		.wdata(store_pc_out), 
 		.we(reg_we), 
-		.clk(CLK), 
+		.clk(CLK),
+		.rst(RST),
 		.rd1(rd1), 
 		.rd2(rd2)
 	);
@@ -118,6 +121,7 @@ module SingleCycle_Top import typedefs::*;
 	Reg aux(
 		.in(alu_bypass_out), 
 		.clk(CLK), 
+		.rst(RST),
 		.out(aux_out)
 	);
 
@@ -126,6 +130,7 @@ module SingleCycle_Top import typedefs::*;
 		.clk(CLK), 
 		.wdata(rd2), 
 		.we(mem_we), 
+		.rst(RST),
 		.out(mem_out),
 		
 		.leds(LEDS),

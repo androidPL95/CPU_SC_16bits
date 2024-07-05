@@ -12,6 +12,7 @@ module RegFile
     input  [WIDTH-1:0]     wdata ,
     input                  we    ,
     input                  clk   ,
+    input                  rst   ,
     output [WIDTH-1:0]     rd1   ,
     output [WIDTH-1:0]     rd2
 );
@@ -26,7 +27,12 @@ assign rd2 = out2;
 // READ BLOCK
 // as said before, needs to be async
 always_latch begin
-    if(we == 1'b0) begin
+    if(rst == 1'b0) begin
+		for(int i = 0 ; i < ADDR_SIZE ; ++i) begin
+			file[i] = '0;
+		end
+	end
+    else if(we == 1'b0) begin
         out1 = file[a1];
         out2 = file[a2];
     end
@@ -34,7 +40,7 @@ end
 
 // WRITE BLOCK
 always_ff@(posedge clk) begin
-    if(we == 1'b1) begin
+    if((we == 1'b1) && (rst == 1'b1)) begin
         file[a1] <= wdata;
     end
 end
