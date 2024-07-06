@@ -20,7 +20,7 @@ always_comb begin
     case(op)
 
         ADD  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -33,7 +33,7 @@ always_comb begin
         end
 
         SUB  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -46,7 +46,7 @@ always_comb begin
         end
 
         NOT : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -59,7 +59,7 @@ always_comb begin
         end
 
         AND  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -72,7 +72,7 @@ always_comb begin
         end
 
         OR   : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -85,7 +85,7 @@ always_comb begin
         end
 
         XOR  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -98,7 +98,7 @@ always_comb begin
         end
 
         SLL  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -111,7 +111,7 @@ always_comb begin
         end
 
         SRL  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -124,7 +124,7 @@ always_comb begin
         end
 
         SRA  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -137,7 +137,7 @@ always_comb begin
         end
 
         ADDI : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -150,7 +150,7 @@ always_comb begin
         end
 
         LUI  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -163,7 +163,7 @@ always_comb begin
         end
 
         ANDI : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -176,7 +176,7 @@ always_comb begin
         end
 
         ORI  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -189,7 +189,7 @@ always_comb begin
         end
 
         XORI : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -202,7 +202,7 @@ always_comb begin
         end
 
         BEQ  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -218,7 +218,7 @@ always_comb begin
         end
 
         BNE  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '0) 
                 sum_imm = '1;
             else
@@ -234,7 +234,7 @@ always_comb begin
         end
 
         BGT  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -250,7 +250,7 @@ always_comb begin
         end
 
         BLT  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '0) 
                 sum_imm = '1;
             else
@@ -266,7 +266,7 @@ always_comb begin
         end
 
         BGE  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -282,7 +282,7 @@ always_comb begin
         end
 
         BLE : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -298,7 +298,7 @@ always_comb begin
         end
 
         BGTU : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -314,7 +314,7 @@ always_comb begin
         end
 
         BLTU : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '0) 
                 sum_imm = '1;
             else
@@ -330,7 +330,7 @@ always_comb begin
         end
 
         BGEU : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -346,7 +346,7 @@ always_comb begin
         end
 
         BLEU : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             if(comp == '1) 
                 sum_imm = '1;
             else
@@ -362,7 +362,7 @@ always_comb begin
         end
 
         JAL  : begin
-            sel_PC     = '0;
+            sel_PC     = '1;
             sum_imm    = '0;
             store_pc   = '1;
             reg_we     = '1;
@@ -380,7 +380,7 @@ always_comb begin
         // READS MEMORY AT ADDRESS SPECIFIED BY AUX AND STORES AT REG FILE
         // ADDRESS A1
         LW   : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '1;
@@ -400,7 +400,7 @@ always_comb begin
         // READS REG FILE AT A2 AND THEN LOADS THE VALUE INTO MEM ADDRESS
         // SPECIFIED BY AUXILIARY
         SW   : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
@@ -413,7 +413,7 @@ always_comb begin
         end
 
         LAD  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '1;
@@ -426,7 +426,7 @@ always_comb begin
         end
 
         LOA  : begin
-            sel_PC     = '1;
+            sel_PC     = '0;
             sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;

@@ -36,9 +36,9 @@ always_ff @(posedge clk or negedge rst) begin
     end
 end
 
-// Inicialização da memória
-initial begin
-    $readmemb("initial_memory_contents.txt", file);
-end
+//// Inicialização da memória
+//initial begin
+//    $readmemb("initial_memory_contents.txt", file);
+//end
 
 endmodule

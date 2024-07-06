@@ -11,12 +11,12 @@ logic aux;
 assign out = aux;
 
 always_comb begin
-//    if((sel != 1'b0) && (sel != 1'b1)) begin
-//        aux = 1'bX;
-//    end
-//    else begin
+    if((sel != 1'b0) && (sel != 1'b1)) begin
+        aux = 1'bX;
+    end
+    else begin
         aux = (sel == 1'b1) ? b : a;
-//    end
+    end
 end
 
 endmodule

@@ -34,18 +34,25 @@
 # 
 # Top level modules:
 # 	Mux2x1
-# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Data_Mem
-# 
-# Top level modules:
-# 	Data_Mem
 # vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Mem
 # 
 # Top level modules:
 # 	Mem
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Data_Mem
+# 
+# Top level modules:
+# 	Data_Mem
+# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SingleCycle_Top
+# -- Importing package typedefs
+# 
+# Top level modules:
+# 	SingleCycle_Top
 # vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Controller
@@ -60,17 +67,11 @@
 # 
 # Top level modules:
 # 	ALU
-# vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module SingleCycle_Top
-# -- Importing package typedefs
-# 
-# Top level modules:
-# 	SingleCycle_Top
 # 
 # vlog -sv -work work +incdir+C:/Faculdade/2024-1/LAOC/Processor\ 16\ bits/CPU_v0.3 {C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module SingleCycle_Top_tb
+# -- Importing package typedefs
 # 
 # Top level modules:
 # 	SingleCycle_Top_tb
@@ -78,11 +79,11 @@
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  SingleCycle_Top_tb
 # vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps SingleCycle_Top_tb 
 # Loading sv_std.std
+# Loading work.typedefs
 # Loading work.SingleCycle_Top_tb
 # ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
 # 
 # No such file or directory. (errno = ENOENT)
-# Loading work.typedefs
 # Loading work.SingleCycle_Top
 # ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
 # 
@@ -92,6 +93,9 @@
 # 
 # No such file or directory. (errno = ENOENT)
 # Loading work.Mux2x1
+# ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
+# 
+# No such file or directory. (errno = ENOENT)
 # ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
 # 
 # No such file or directory. (errno = ENOENT)
@@ -130,102 +134,97 @@
 # ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
 # 
 # No such file or directory. (errno = ENOENT)
-# ** Error: (vsim-19) Failed to access library 'fiftyfivenm_ver' at "fiftyfivenm_ver".
-# 
-# No such file or directory. (errno = ENOENT)
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(72): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(75): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/feedback_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(72): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(75): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/feedback_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(72): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(75): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/feedback_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(79): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(82): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/pc_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(79): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(82): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/pc_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(79): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(82): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/pc_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(98): [PCDPC] - Port size (10 or 10) does not match connection size (16) for port 'addr'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv(8).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(89): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# 
+#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(89): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# 
+#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(89): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# 
+#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(108): [PCDPC] - Port size (10 or 10) does not match connection size (16) for port 'addr'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv(8).
 # 
 #         Region: /SingleCycle_Top_tb/uut/inst_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(116): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(126): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(116): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(126): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(116): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(126): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(131): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(141): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_bypass_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(131): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(141): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_bypass_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(131): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(141): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/alu_bypass_mux
-# ** Warning: (vsim-3017) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [TFMPC] - Too few port connections. Expected 14, found 13.
+# ** Warning: (vsim-3017) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [TFMPC] - Too few port connections. Expected 14, found 11.
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (10 or 10) does not match connection size (16) for port 'addr'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(8).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (10 or 10) does not match connection size (16) for port 'addr'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(8).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (10) for port 'leds'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(14).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (16 or 16) does not match connection size (10) for port 'leds'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(14).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex1'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(16).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex3'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(18).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex2'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(17).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex4'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(19).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex3'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(18).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex5'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(20).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex4'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(19).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [PCDPC] - Port size (16 or 16) does not match connection size (10) for port 'switchs'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(21).
 # 
 #         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'hex5'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(20).
+# ** Warning: (vsim-3722) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [TFMPC] - Missing connection for port 'hex0'.
 # 
-#         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [PCDPC] - Port size (16 or 16) does not match connection size (10) for port 'switchs'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv(21).
+# ** Warning: (vsim-3722) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [TFMPC] - Missing connection for port 'hex1'.
 # 
-#         Region: /SingleCycle_Top_tb/uut/data_mem
-# ** Warning: (vsim-3722) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(156): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(166): [TFMPC] - Missing connection for port 'hex2'.
 # 
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(163): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(173): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/mem_bypass_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(163): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(173): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/mem_bypass_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(163): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(173): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/mem_bypass_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(170): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
-# 
-#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(170): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
-# 
-#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(170): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
-# 
-#         Region: /SingleCycle_Top_tb/uut/sum_imm_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(177): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(181): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'a'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(3).
 # 
 #         Region: /SingleCycle_Top_tb/uut/store_pc_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(177): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(181): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'b'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(4).
 # 
 #         Region: /SingleCycle_Top_tb/uut/store_pc_mux
-# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(177): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
+# ** Warning: (vsim-3015) C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv(181): [PCDPC] - Port size (1 or 1) does not match connection size (16) for port 'out'. The port definition is at: C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv(6).
 # 
 #         Region: /SingleCycle_Top_tb/uut/store_pc_mux
 # 
@@ -235,264 +234,260 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Warning: (vsim-7) Failed to open readmem file "initial_memory_contents.txt" in read mode.
-# 
-# No such file or directory. (errno = ENOENT)    : C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv(41)
-#    Time: 0 ps  Iteration: 0  Instance: /SingleCycle_Top_tb/uut/inst_mem
-# Time: 0 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 5000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 10000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 15000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 20000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 25000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 30000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 35000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 40000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 45000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 50000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 55000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 60000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 65000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 70000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 75000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 80000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 85000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 90000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 95000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 100000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 105000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 110000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 115000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 120000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 125000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 130000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 135000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 140000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 145000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 150000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 155000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 160000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 165000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 170000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 175000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 180000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 185000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 190000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 195000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 200000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 205000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 210000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 215000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 220000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 225000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 230000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 235000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 240000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 245000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 250000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 255000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 260000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 265000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 270000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 275000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 280000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 285000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 290000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 295000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 300000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 305000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 310000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 315000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 320000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 325000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 330000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 335000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 340000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 345000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 350000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 355000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 360000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 365000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 370000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 375000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 380000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 385000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 390000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 395000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 400000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 405000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 410000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 415000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 420000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 425000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 430000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 435000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 440000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 445000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 450000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 455000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 460000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 465000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 470000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 475000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 480000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 485000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 490000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 495000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 500000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 505000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 510000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 515000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 520000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 525000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 530000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 535000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 540000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 545000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 550000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 555000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 560000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 565000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 570000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 575000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 580000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 585000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 590000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 595000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 600000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 605000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 610000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 615000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 620000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 625000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 630000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 635000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 640000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 645000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 650000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 655000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 660000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 665000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 670000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 675000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 680000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 685000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 690000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 695000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 700000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 705000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 710000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 715000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 720000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 725000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 730000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 735000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 740000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 745000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 750000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 755000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 760000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 765000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 770000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 775000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 780000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 785000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 790000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 795000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 800000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 805000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 810000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 815000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 820000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 825000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 830000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 835000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 840000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 845000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 850000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 855000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 860000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 865000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 870000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 875000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 880000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 885000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 890000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 895000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 900000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 905000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 910000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 915000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 920000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 925000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 930000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 935000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 940000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 945000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 950000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 955000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 960000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 965000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 970000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 975000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 980000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 985000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 990000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 995000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1000000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1005000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1010000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1015000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1020000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1025000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1030000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1035000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1040000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1045000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1050000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1055000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1060000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1065000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1070000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1075000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1080000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1085000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1090000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1095000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1100000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1105000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1110000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1115000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1120000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1125000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1130000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1135000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1140000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1145000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1150000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1155000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1160000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1165000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1170000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1175000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1180000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1185000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1190000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1195000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1200000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1205000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1210000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1215000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1220000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1225000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1230000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1235000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1240000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# Time: 1245000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 00 | HEX2 = 00 | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
-# ** Note: $finish    : C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv(105)
+# Time: 0 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 5000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 10000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 15000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 20000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 25000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 30000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 35000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 40000 | CLK = 0 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 45000 | CLK = 1 | RST = 0 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 50000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = 00 | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 55000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 60000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 65000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 70000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 75000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 80000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 85000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 90000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 95000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 100000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 105000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 110000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 115000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 120000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 125000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 130000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 135000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 140000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 145000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 150000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 155000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 160000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 165000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 170000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 175000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 180000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 185000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 190000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 195000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 200000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 205000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 210000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 215000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 220000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 225000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 230000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 235000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 240000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 245000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 250000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 255000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 260000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 265000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 270000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 275000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 280000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 285000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 290000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 295000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 300000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 305000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 310000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 315000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 320000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 325000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 330000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 335000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 340000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 345000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 350000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 355000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 360000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 365000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 370000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 375000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 380000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 385000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 390000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 395000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 400000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 405000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 410000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 415000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 420000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 425000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 430000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 435000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 440000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 445000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 450000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 455000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 460000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 465000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 470000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 475000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 480000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 485000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 490000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 495000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 500000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 505000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 510000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 515000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 520000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 525000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 530000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 535000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 540000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 545000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 550000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 555000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 560000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 565000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 570000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 575000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 580000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 585000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 590000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 595000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 600000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 605000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 610000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 615000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 620000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 625000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 630000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 635000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 640000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 645000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 650000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 655000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 660000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 665000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 670000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 675000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 680000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 685000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 690000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 695000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 700000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 705000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 710000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 715000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 720000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 725000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 730000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 735000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 740000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 745000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 750000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 755000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 760000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 765000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 770000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 775000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 780000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 785000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 790000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 795000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 800000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 805000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 810000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 815000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 820000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 825000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 830000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 835000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 840000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 845000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 850000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 855000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 860000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 865000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 870000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 875000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 880000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 885000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 890000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 895000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 900000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 905000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 910000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 915000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 920000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 925000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 930000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 935000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 940000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 945000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 950000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 955000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 960000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 965000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 970000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 975000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 980000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 985000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 990000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 995000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1000000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1005000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1010000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1015000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1020000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1025000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1030000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1035000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1040000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1045000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1050000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1055000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1060000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1065000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1070000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1075000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1080000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1085000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1090000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1095000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1100000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1105000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1110000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1115000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1120000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1125000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1130000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1135000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1140000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1145000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1150000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1155000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1160000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1165000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1170000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1175000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1180000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1185000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1190000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1195000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1200000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1205000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1210000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1215000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1220000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1225000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1230000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1235000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1240000 | CLK = 0 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# Time: 1245000 | CLK = 1 | RST = 1 | SW = 0000000000 | LEDS = 0000000000 | HEX0 = zX | HEX1 = 000 | HEX2 = xx | HEX3 = 00 | HEX4 = 00 | HEX5 = 00
+# ** Note: $finish    : C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv(112)
 #    Time: 1250 ns  Iteration: 0  Instance: /SingleCycle_Top_tb
 # 1
-# Break in Module SingleCycle_Top_tb at C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv line 105
+# Break in Module SingleCycle_Top_tb at C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv line 112
 # Simulation Breakpoint: 1
-# Break in Module SingleCycle_Top_tb at C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv line 105
+# Break in Module SingleCycle_Top_tb at C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv line 112
 # MACRO ./Single_Cycle_Processor_run_msim_rtl_verilog.do PAUSED at line 25

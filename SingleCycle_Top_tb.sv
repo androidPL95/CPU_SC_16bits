@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
-module SingleCycle_Top_tb;
+module SingleCycle_Top_tb import typedefs::*;
+();
 
     // Parameters
     localparam CLK_PERIOD = 10;
@@ -14,8 +15,8 @@ module SingleCycle_Top_tb;
     // Outputs
     wire [9:0] LEDS;
     wire [7:0] HEX0;
-    wire [7:0] HEX1;
-    wire [7:0] HEX2;
+    wire [9:0] HEX1;
+    wire [5:0] HEX2;
     wire [7:0] HEX3;
     wire [7:0] HEX4;
     wire [7:0] HEX5;
@@ -42,23 +43,10 @@ module SingleCycle_Top_tb;
 
     // Test sequence
     initial begin
-        // Initialize Inputs
-        RST = 0;
-        SW = 10'b0000000000;
-
-        // Wait for global reset to finish
-        #(CLK_PERIOD * 5);
-        RST = 1;
-
-//        // Apply stimulus
-//        SW = 10'b0000000001;
-//        #(CLK_PERIOD * 10);
-//        SW = 10'b0000000010;
-//        #(CLK_PERIOD * 10);
-//        SW = 10'b0000000100;
-//        #(CLK_PERIOD * 10);
-
+	 
+		force uut.control_block.op = ADD;
 		// Force specific values to the inst_mem file array
+		//
 		force uut.inst_mem.file[0] = 16'b0110000000000000;
 		force uut.inst_mem.file[1] = 16'b0111000000000001;
 		force uut.inst_mem.file[2] = 16'b0110000000010111;
@@ -76,10 +64,29 @@ module SingleCycle_Top_tb;
 		force uut.inst_mem.file[14] = 16'b0110000000010111;
 		force uut.inst_mem.file[15] = 16'b0110000000010001;
 		force uut.inst_mem.file[16] = 16'b0110000010100000;
+		
+        // Initialize Inputs
+        RST = 0;
+        SW = 10'b0000000000;
+
+        // Wait for global reset to finish
+        #(CLK_PERIOD * 5);
+        RST = 1;
+
+//        // Apply stimulus
+//        SW = 10'b0000000001;
+//        #(CLK_PERIOD * 10);
+//        SW = 10'b0000000010;
+//        #(CLK_PERIOD * 10);
+//        SW = 10'b0000000100;
+//        #(CLK_PERIOD * 10);
+
+		
 		// Wait for some time to observe the forced values
 		#(CLK_PERIOD * 20);
 
   // Release the forced values
+		  //release uut.op;
         release uut.inst_mem.file[0];
         release uut.inst_mem.file[1];
         release uut.inst_mem.file[2];

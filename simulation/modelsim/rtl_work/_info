@@ -5,7 +5,7 @@ cModel Technology
 Z0 dC:\Faculdade\2024-1\LAOC\Processor 16 bits\CPU_v0.3\simulation\modelsim
 vALU
 Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 DXx4 work 8 typedefs 0 22 @GV3o^@jAbmBM;bjei@ZW2
+Z2 DXx4 work 8 typedefs 0 22 W3B<B0^hZhQ^oi0F09[5c0
 IO`VdGN`OHieF@Oh=5?n2Q3
 V?nT4CCPXa0KUM0n0VWaEh1
 S1
@@ -24,18 +24,18 @@ n@a@l@u
 !s100 :Y`=Yj=J1>6aLJfABHRma2
 !s105 ALU_sv_unit
 !s85 0
-!s108 1720232077.616000
+!s108 1720238366.286000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv|
 !s101 -O0
 vController
 R1
 R2
-I>L9Ocf2]QW5CQHZz]Y8_G0
+I4?KOVdmoOmA`X:nCPd[860
 V1Smk:THicR>QSmIbSkdgZ1
 S1
 R3
-w1720229868
+w1720238246
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv
 L0 1
@@ -46,10 +46,10 @@ R5
 R6
 n@controller
 !i10b 1
-!s100 P6CWT9gK>@g[]`DJ`Z;3i0
+!s100 Nz8=VX@VUK6>W@1CO]Fmj3
 !s105 Controller_sv_unit
 !s85 0
-!s108 1720232077.549000
+!s108 1720238366.204000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv|
 !s101 -O0
@@ -73,17 +73,17 @@ n@data_@mem
 !s100 ;:K=gdm_Z=MoDcTGI?N5Z1
 !s105 Data_Mem_sv_unit
 !s85 0
-!s108 1720232077.426000
+!s108 1720238366.060000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv|
 !s101 -O0
 vMem
 R1
-IaTSmEjeS58TeGW0f7POQm2
+IY9_BA0ZPEQLXSaYW:RdnS0
 VIN:_ZL4_85Pgh<^V<WZ8<3
 S1
 R3
-w1720204726
+w1720235809
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv
 L0 1
@@ -94,20 +94,20 @@ R5
 R6
 n@mem
 !i10b 1
-!s100 cajFgHVOj:C8[A[I9DBdg3
+!s100 8[]fEj<VDE0I3gajP3Z8:1
 !s105 Mem_sv_unit
 !s85 0
-!s108 1720232077.488000
+!s108 1720238365.983000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv|
 !s101 -O0
 vMux2x1
 R1
-IQ56=WK2^]NDb3<=^<C6[C0
+InTECZJ;^hPadD4>kE5:eP0
 VC<XVJd:8h_K9`=cB0Bc:S2
 S1
 R3
-w1719864820
+w1720234757
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv
 L0 1
@@ -118,10 +118,10 @@ R5
 R6
 n@mux2x1
 !i10b 1
-!s100 GKM=e`b>m2f^Czl@bK@>U0
+!s100 eVBGHM^ngbaU4oza52]?P3
 !s105 Mux2x1_sv_unit
 !s85 0
-!s108 1720232077.364000
+!s108 1720238365.914000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv|
 !s101 -O0
@@ -145,7 +145,7 @@ n@reg
 !s100 d1<IhMeE305IGgkeP:Vo>2
 !s105 Reg_sv_unit
 !s85 0
-!s108 1720232077.304000
+!s108 1720238365.837000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv|
 !s101 -O0
@@ -169,18 +169,18 @@ n@reg@file
 !s100 HedakiW6I<C1D]1ba@nP[1
 !s105 RegFile_sv_unit
 !s85 0
-!s108 1720232077.227000
+!s108 1720238365.756000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv|
 !s101 -O0
 vSingleCycle_Top
 R1
 R2
-I4d2RDTk=oeVb>PoKea>kE0
-VM3Z7b<_eH1c072VZYQ0X<2
+I[b9a`=>4UL1fLK_75bgIi1
+VGo1eOfX`>M8dI^h`L``0c2
 S1
 R3
-w1720231901
+w1720238122
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv
 L0 1
@@ -191,23 +191,24 @@ R5
 R6
 n@single@cycle_@top
 !i10b 1
-!s100 LAEHb586Haef3z[T<2P791
+!s100 :n5UY?H6DU`6?iW4l^cdh3
 !s105 SingleCycle_Top_sv_unit
 !s85 0
-!s108 1720232077.676000
+!s108 1720238366.131000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv|
 !s101 -O0
 vSingleCycle_Top_tb
 R1
+R2
 !i10b 1
-!s100 gVMXe`1DWM9`eP33TBZI]2
-IlmVRnOL>Ca[1Q65FCFHfG2
+!s100 TVUidR=If0Y4Q?k@=Z@Oe3
+IXD2AU<BIFO:AS;Qm@=K8_3
 VCFb1o]@D?nYnBZH]kn8zo0
 !s105 SingleCycle_Top_tb_sv_unit
 S1
 R3
-w1720229381
+w1720238274
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv
 L0 3
@@ -215,7 +216,7 @@ R4
 r1
 !s85 0
 31
-!s108 1720232077.744000
+!s108 1720238366.364000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv|
 !s101 -O0
@@ -224,11 +225,11 @@ R6
 n@single@cycle_@top_tb
 Xtypedefs
 R1
-I@GV3o^@jAbmBM;bjei@ZW2
-V@GV3o^@jAbmBM;bjei@ZW2
+IW3B<B0^hZhQ^oi0F09[5c0
+VW3B<B0^hZhQ^oi0F09[5c0
 S1
 R3
-w1720227954
+w1720235250
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv
 L0 1
@@ -238,9 +239,9 @@ r1
 R5
 R6
 !i10b 1
-!s100 CS<jQB8S?aTP[<I@aigIO0
+!s100 KKTc:7<[=D[55LmQ<C3N]3
 !s85 0
-!s108 1720232077.160000
+!s108 1720238365.674000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv|
 !s101 -O0
