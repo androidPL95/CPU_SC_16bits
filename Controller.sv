@@ -10,6 +10,7 @@ module Controller import typedefs::*;
     output logic        alu_imm   ,
     output alu_opcode_t alu_ctrl  ,
     output logic        alu_bypass,
+	 output logic			alu_feedback_in,
     output logic        mem_we    ,
     output logic        mem_bypass
 );
@@ -26,6 +27,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -38,6 +40,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_SUB;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -50,6 +53,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_NOT;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -62,6 +66,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_AND;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -74,6 +79,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_OR;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -86,6 +92,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_XOR;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -98,6 +105,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_SLL;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -110,6 +118,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_SRL;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -122,6 +131,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_SRA;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -134,6 +144,7 @@ always_comb begin
             alu_imm    = '1;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '1;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -144,8 +155,9 @@ always_comb begin
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
-            alu_ctrl   = ALU_ADD;
-            alu_bypass = '1;
+            alu_ctrl   = ALU_BSL;
+            alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -158,6 +170,7 @@ always_comb begin
             alu_imm    = '1;
             alu_ctrl   = ALU_AND;
             alu_bypass = '0;
+				alu_feedback_in = '1;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -170,6 +183,7 @@ always_comb begin
             alu_imm    = '1;
             alu_ctrl   = ALU_OR;
             alu_bypass = '0;
+				alu_feedback_in = '1;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -182,6 +196,7 @@ always_comb begin
             alu_imm    = '1;
             alu_ctrl   = ALU_XOR;
             alu_bypass = '0;
+				alu_feedback_in = '1;
             mem_we     = '0;
             mem_bypass = '0;        
         end
@@ -196,6 +211,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = EQ;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -211,6 +227,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = EQ;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -226,6 +243,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GRT;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -241,6 +259,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GRT;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -256,6 +275,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTE;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -271,6 +291,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = LTE;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -286,6 +307,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTU;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -301,6 +323,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTU;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -316,6 +339,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GEU;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -331,6 +355,7 @@ always_comb begin
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = LEU;
+				alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
@@ -344,6 +369,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
         end
@@ -361,6 +387,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
         end
@@ -380,11 +407,10 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '1;
             mem_bypass = '0;
         end
-
-        //SB   :
 
         LAD  : begin
             sel_PC     = '1;
@@ -394,6 +420,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '1;
         end
@@ -406,6 +433,7 @@ always_comb begin
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '1;
+				alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
         end

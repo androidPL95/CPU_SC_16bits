@@ -11,6 +11,7 @@ entity Data_Mem is
         clk             : in     vl_logic;
         wdata           : in     vl_logic_vector;
         we              : in     vl_logic;
+        rst             : in     vl_logic;
         \out\           : out    vl_logic_vector;
         leds            : out    vl_logic_vector;
         hex0            : out    vl_logic_vector;

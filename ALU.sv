@@ -105,6 +105,11 @@ always_comb begin
             aux_out = '0;
             aux_comp = (a <= b) ? '1 : '0;
         end
+		  
+		  ALU_BSL : begin		// ALU Byte Shift Left. To make upper imediate
+            aux_out = (b << 8);
+            aux_comp = '0;
+        end
 
     endcase
 end

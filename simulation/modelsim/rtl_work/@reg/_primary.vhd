@@ -7,6 +7,7 @@ entity Reg is
     port(
         \in\            : in     vl_logic_vector;
         clk             : in     vl_logic;
+        rst             : in     vl_logic;
         \out\           : out    vl_logic_vector
     );
     attribute mti_svvh_generic_type : integer;

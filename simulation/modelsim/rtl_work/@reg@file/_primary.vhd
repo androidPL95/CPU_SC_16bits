@@ -12,6 +12,7 @@ entity RegFile is
         wdata           : in     vl_logic_vector;
         we              : in     vl_logic;
         clk             : in     vl_logic;
+        rst             : in     vl_logic;
         rd1             : out    vl_logic_vector;
         rd2             : out    vl_logic_vector
     );

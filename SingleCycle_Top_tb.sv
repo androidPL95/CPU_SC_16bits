@@ -43,39 +43,39 @@ module SingleCycle_Top_tb;
     // Test sequence
     initial begin
         // Initialize Inputs
-        RST = 1;
+        RST = 0;
         SW = 10'b0000000000;
 
         // Wait for global reset to finish
         #(CLK_PERIOD * 5);
-        RST = 0;
+        RST = 1;
 
-        // Apply stimulus
-        SW = 10'b0000000001;
-        #(CLK_PERIOD * 10);
-        SW = 10'b0000000010;
-        #(CLK_PERIOD * 10);
-        SW = 10'b0000000100;
-        #(CLK_PERIOD * 10);
+//        // Apply stimulus
+//        SW = 10'b0000000001;
+//        #(CLK_PERIOD * 10);
+//        SW = 10'b0000000010;
+//        #(CLK_PERIOD * 10);
+//        SW = 10'b0000000100;
+//        #(CLK_PERIOD * 10);
 
 		// Force specific values to the inst_mem file array
-		force uut.inst_mem.file[0] = 16'b0100110000000000;
-		force uut.inst_mem.file[1] = 16'b0101010000000001;
-		force uut.inst_mem.file[2] = 16'b0100110000010111;
+		force uut.inst_mem.file[0] = 16'b0110000000000000;
+		force uut.inst_mem.file[1] = 16'b0111000000000001;
+		force uut.inst_mem.file[2] = 16'b0110000000010111;
 		force uut.inst_mem.file[3] = 16'b0000001111111111;
-		force uut.inst_mem.file[4] = 16'b0100110000010111;
-		force uut.inst_mem.file[5] = 16'b0100110000011111;
+		force uut.inst_mem.file[4] = 16'b0110000000010111;
+		force uut.inst_mem.file[5] = 16'b0110000000011111;
 		force uut.inst_mem.file[6] = 16'b0000000000000110;
-		force uut.inst_mem.file[7] = 16'b0100110000010000;
-		force uut.inst_mem.file[8] = 16'b0100110000011111;
+		force uut.inst_mem.file[7] = 16'b0110000000010000;
+		force uut.inst_mem.file[8] = 16'b0110000000011111;
 		force uut.inst_mem.file[9] = 16'b0000000000001011;
-		force uut.inst_mem.file[10] = 16'b0100110000010001;
-		force uut.inst_mem.file[11] = 16'b0100110000010000;
-		force uut.inst_mem.file[12] = 16'b0110010000010111;
+		force uut.inst_mem.file[10] = 16'b0110000000010001;
+		force uut.inst_mem.file[11] = 16'b0110000000010000;
+		force uut.inst_mem.file[12] = 16'b0111000000010111;
 		force uut.inst_mem.file[13] = 16'b0000001011110111;
-		force uut.inst_mem.file[14] = 16'b0100110000010111;
-		force uut.inst_mem.file[15] = 16'b0100110000010001;
-		force uut.inst_mem.file[16] = 16'b0100110010100000;
+		force uut.inst_mem.file[14] = 16'b0110000000010111;
+		force uut.inst_mem.file[15] = 16'b0110000000010001;
+		force uut.inst_mem.file[16] = 16'b0110000010100000;
 		// Wait for some time to observe the forced values
 		#(CLK_PERIOD * 20);
 

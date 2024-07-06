@@ -13,6 +13,7 @@ entity Controller is
         alu_imm         : out    vl_logic;
         alu_ctrl        : out    work.typedefs.alu_opcode_t;
         alu_bypass      : out    vl_logic;
+        alu_feedback_in : out    vl_logic;
         mem_we          : out    vl_logic;
         mem_bypass      : out    vl_logic
     );

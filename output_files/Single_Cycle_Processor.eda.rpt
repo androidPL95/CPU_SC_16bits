@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Single_Cycle_Processor
-Thu Jul 04 20:09:25 2024
+Fri Jul 05 23:13:08 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Jul 04 20:09:25 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Jul 05 23:13:08 2024 ;
 ; Revision Name             ; Single_Cycle_Processor                ;
 ; Top-level Entity Name     ; SingleCycle_Top                       ;
 ; Family                    ; MAX 10                                ;
@@ -81,14 +81,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Jul 04 20:09:24 2024
+    Info: Processing started: Fri Jul 05 23:13:07 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Single_Cycle_Processor -c Single_Cycle_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
 Info (204019): Generated file Single_Cycle_Processor.vo in folder "C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4642 megabytes
-    Info: Processing ended: Thu Jul 04 20:09:25 2024
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Fri Jul 05 23:13:08 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

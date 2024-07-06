@@ -5,99 +5,99 @@ cModel Technology
 Z0 dC:\Faculdade\2024-1\LAOC\Processor 16 bits\CPU_v0.3\simulation\modelsim
 vALU
 Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 DXx4 work 8 typedefs 0 22 LClE:Kc1[949jdf<1acm@1
-IUSnDIEboP5[F<GGL]_di:0
+Z2 DXx4 work 8 typedefs 0 22 @GV3o^@jAbmBM;bjei@ZW2
+IO`VdGN`OHieF@Oh=5?n2Q3
 V?nT4CCPXa0KUM0n0VWaEh1
 S1
 Z3 dC:\Faculdade\2024-1\LAOC\Processor 16 bits\CPU_v0.3\simulation\modelsim
-Z4 w1719864820
+w1720228873
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv
 L0 1
-Z5 OV;L;10.1d;51
+Z4 OV;L;10.1d;51
 r1
 31
-Z6 o-sv -work work -O0
-Z7 !s92 -sv -work work {+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3} -O0
+Z5 o-sv -work work -O0
+Z6 !s92 -sv -work work {+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3} -O0
 n@a@l@u
 !i10b 1
-!s100 ^]jUQXoKJG`D_1^:[bnM[1
+!s100 :Y`=Yj=J1>6aLJfABHRma2
 !s105 ALU_sv_unit
 !s85 0
-!s108 1720134611.525000
+!s108 1720232077.616000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv|
 !s101 -O0
 vController
 R1
 R2
-Ih@DSaIHX6I`K`;nzJh9=U2
-VPXPNn=kCTVJ=:7b8eQA:C2
+I>L9Ocf2]QW5CQHZz]Y8_G0
+V1Smk:THicR>QSmIbSkdgZ1
 S1
 R3
-w1719866840
+w1720229868
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv
 L0 1
-R5
+R4
 r1
 31
+R5
 R6
-R7
 n@controller
 !i10b 1
-!s100 L9N=4`8_l`m?G[GM:00>@0
+!s100 P6CWT9gK>@g[]`DJ`Z;3i0
 !s105 Controller_sv_unit
 !s85 0
-!s108 1720134611.447000
+!s108 1720232077.549000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv|
 !s101 -O0
 vData_Mem
 R1
-I]HkiDGf:d[FE8eS[h3kEK0
-VMIGj<MVmn6^>Z4ObKe<`B3
+IbX1E_Gncn4Mdfaf<66gad2
+V1UWYPH__aXBLT5VTa>lIW0
 S1
 R3
-w1720134529
+w1720230248
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv
-L0 3
-R5
+L0 1
+R4
 r1
 31
+R5
 R6
-R7
 n@data_@mem
 !i10b 1
-!s100 S];TPhdZoF8@<jQ2Y=_8K1
+!s100 ;:K=gdm_Z=MoDcTGI?N5Z1
 !s105 Data_Mem_sv_unit
 !s85 0
-!s108 1720134611.590000
+!s108 1720232077.426000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv|
 !s101 -O0
 vMem
 R1
-IiheSczSnTEQIHV^>f4eY40
-VAEK[DeTgCJC`Yd]E9a6`m2
+IaTSmEjeS58TeGW0f7POQm2
+VIN:_ZL4_85Pgh<^V<WZ8<3
 S1
 R3
-R4
+w1720204726
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv
-L0 3
-R5
+L0 1
+R4
 r1
 31
+R5
 R6
-R7
 n@mem
 !i10b 1
-!s100 F7IDB_>WOO_0Oj>^QV5Sj1
+!s100 cajFgHVOj:C8[A[I9DBdg3
 !s105 Mem_sv_unit
 !s85 0
-!s108 1720134611.378000
+!s108 1720232077.488000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv|
 !s101 -O0
@@ -107,116 +107,140 @@ IQ56=WK2^]NDb3<=^<C6[C0
 VC<XVJd:8h_K9`=cB0Bc:S2
 S1
 R3
-R4
+w1719864820
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv
 L0 1
-R5
+R4
 r1
 31
+R5
 R6
-R7
 n@mux2x1
 !i10b 1
 !s100 GKM=e`b>m2f^Czl@bK@>U0
 !s105 Mux2x1_sv_unit
 !s85 0
-!s108 1720134611.316000
+!s108 1720232077.364000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mux2x1.sv|
 !s101 -O0
 vReg
 R1
-I36bSk6hi6diZ5IP8]XAJM3
-VX`jalccW]T^6AnE=Xah7h1
+IkloM3@CD?4<A2ka7<MG]E3
+Va`lT=MLG>9_43_^jNAU4Z3
 S1
 R3
-R4
+w1720204367
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv
 L0 1
-R5
+R4
 r1
 31
+R5
 R6
-R7
 n@reg
 !i10b 1
-!s100 c4A[oDkjjOLV?DGHB:aA:1
+!s100 d1<IhMeE305IGgkeP:Vo>2
 !s105 Reg_sv_unit
 !s85 0
-!s108 1720134611.257000
+!s108 1720232077.304000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Reg.sv|
 !s101 -O0
 vRegFile
 R1
-I^eJZ`<<S^6`eTZ3S4gBc@3
-ViPcXT?6e[7@eLRfieBla<3
+IlM<2LC=;Oc6<c993<;7jP2
+VVkPZGT;Soa1_N@=TBmb1c1
 S1
 R3
-R4
+w1720204874
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv
-L0 3
-R5
+L0 1
+R4
 r1
 31
+R5
 R6
-R7
 n@reg@file
 !i10b 1
-!s100 aSgA:j;h[9dYE8F6Q1Ibl3
+!s100 HedakiW6I<C1D]1ba@nP[1
 !s105 RegFile_sv_unit
 !s85 0
-!s108 1720134611.176000
+!s108 1720232077.227000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/RegFile.sv|
 !s101 -O0
 vSingleCycle_Top
 R1
 R2
-!i10b 1
-!s100 oI3cKz869:<CZMB0A[WJC1
-I<C]K`2Tb9`X_mIMIGTZCY1
+I4d2RDTk=oeVb>PoKea>kE0
 VM3Z7b<_eH1c072VZYQ0X<2
-!s105 SingleCycle_Top_sv_unit
 S1
 R3
-w1720133615
+w1720231901
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv
 L0 1
-R5
+R4
 r1
-!s85 0
 31
-!s108 1720134611.659000
+R5
+R6
+n@single@cycle_@top
+!i10b 1
+!s100 LAEHb586Haef3z[T<2P791
+!s105 SingleCycle_Top_sv_unit
+!s85 0
+!s108 1720232077.676000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top.sv|
 !s101 -O0
-R6
-R7
-n@single@cycle_@top
-Xtypedefs
+vSingleCycle_Top_tb
 R1
-ILClE:Kc1[949jdf<1acm@1
-VLClE:Kc1[949jdf<1acm@1
+!i10b 1
+!s100 gVMXe`1DWM9`eP33TBZI]2
+IlmVRnOL>Ca[1Q65FCFHfG2
+VCFb1o]@D?nYnBZH]kn8zo0
+!s105 SingleCycle_Top_tb_sv_unit
 S1
 R3
+w1720229381
+8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv
+FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv
+L0 3
 R4
+r1
+!s85 0
+31
+!s108 1720232077.744000
+!s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/SingleCycle_Top_tb.sv|
+!s101 -O0
+R5
+R6
+n@single@cycle_@top_tb
+Xtypedefs
+R1
+I@GV3o^@jAbmBM;bjei@ZW2
+V@GV3o^@jAbmBM;bjei@ZW2
+S1
+R3
+w1720227954
 8C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv
 FC:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv
 L0 1
-R5
+R4
 r1
 31
+R5
 R6
-R7
 !i10b 1
-!s100 0c`R7Tn_I3LW^hNln9Y^>3
+!s100 CS<jQB8S?aTP[<I@aigIO0
 !s85 0
-!s108 1720134611.112000
+!s108 1720232077.160000
 !s107 C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3|C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/typedefs.sv|
 !s101 -O0

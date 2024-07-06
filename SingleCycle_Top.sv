@@ -19,6 +19,7 @@ module SingleCycle_Top import typedefs::*;
 	wire [15:0] sel_pc_out;
 	wire [15:0] pc_out;
 	wire [15:0] im_out;
+	wire [15:0] alu_in;
 	wire [15:0] rd1;
 	wire [15:0] rd2;
 	wire [15:0] alu_imm_out;
@@ -30,15 +31,16 @@ module SingleCycle_Top import typedefs::*;
 	wire [15:0] store_pc_out;
 	wire [15:0] sum_imm_out;
 
-	opcode_t     op;
+	opcode_t           op;
 	wire               comp;
 	wire               sel_pc;    
 	wire               sum_imm;   
 	wire               store_pc;  
 	wire               reg_we;    
 	wire               alu_imm;   
-	alu_opcode_t alu_ctrl;  
+	alu_opcode_t       alu_ctrl;  
 	wire               alu_bypass;
+	wire					 alu_feedback_in;
 	wire               mem_we;    
 	wire               mem_bypass;
 
@@ -56,14 +58,24 @@ module SingleCycle_Top import typedefs::*;
 		.reg_we(reg_we), 
 		.alu_imm(alu_imm), 
 		.alu_ctrl(alu_ctrl), 
-		.alu_bypass(alu_bypass), 
+		.alu_bypass(alu_bypass),
+		.alu_feedback_in(alu_feedback_in),
 		.mem_we(mem_we), 
 		.mem_bypass(mem_bypass)
 	);
+	
+	assign HEX0 = ;
+	
+	Mux2x1 feedback_mux(
+		.a(rd1), 
+		.b(aux_out), 
+		.sel(alu_feedback_in), 
+		.out(alu_in)
+	);
 
 	Mux2x1 pc_mux(
-		.a(aux_out), 
-		.b(pc_out + sum_imm_out), 
+		.a(pc_out + sum_imm_out), 
+		.b(aux_out), 
 		.sel(sel_pc), 
 		.out(sel_pc_out)
 	);
@@ -75,13 +87,15 @@ module SingleCycle_Top import typedefs::*;
 		.out(pc_out)
 	);
 	
+	assign HEX0 = pc_out[7:0];
+	
 	
 	Mem inst_mem(
 		.addr(pc_out), 
 		.clk(CLK), 
 		.wdata('0), 
 		.we('0),
-		.rst(RST),
+		.rst('0),
 		.out(im_out)
 	);
 
@@ -104,7 +118,7 @@ module SingleCycle_Top import typedefs::*;
 	);
 
 	ALU my_alu(
-		.a(rd1), 
+		.a(alu_in), 
 		.b(alu_imm_out), 
 		.opcode(alu_ctrl), 
 		.out(alu_out), 
@@ -134,8 +148,8 @@ module SingleCycle_Top import typedefs::*;
 		.out(mem_out),
 		
 		.leds(LEDS),
-		.hex0(HEX0),
-		.hex1(HEX1),
+		//.hex0(HEX0),
+		//.hex1(HEX1),
 		.hex2(HEX2),
 		.hex3(HEX3),
 		.hex4(HEX4),
