@@ -10,6 +10,7 @@ source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem.sv
 source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Controller.sv
 source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/ALU.sv
 source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Data_Mem.sv
+source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/Mem_tb.sv
 source_file = 1, C:/Faculdade/2024-1/LAOC/Processor 16 bits/CPU_v0.3/db/Single_Cycle_Processor.cbx.xml
 design_name = SingleCycle_Top
 instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, SingleCycle_Top, 1

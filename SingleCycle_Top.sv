@@ -50,7 +50,7 @@ module SingleCycle_Top import typedefs::*;
 
 	Controller control_block(
 		.clk(CLK), 
-		.op(op), 
+		.op(opcode_t'(im_out[15:10])), 
 		.comp(comp), 
 		.sel_PC(sel_pc), 
 		.sum_imm(sum_imm), 
@@ -99,11 +99,11 @@ module SingleCycle_Top import typedefs::*;
 	
 	
 	Mem inst_mem(
-		.addr(pc_out), 
+		.addr(pc_out[9:0]), 
 		.clk(CLK), 
 		.wdata('0), 
 		.we('0),
-		.rst('0),
+		.rst('1),
 		.out(im_out)
 	);
 

@@ -1,9 +1,9 @@
 module Mux2x1
 ( 
-  input  a   ,
-  input  b   ,
+  input  [15:0] a   ,
+  input  [15:0] b   ,
   input  sel ,
-  output out 
+  output [15:0] out 
 );
 
 logic aux;
