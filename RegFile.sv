@@ -31,14 +31,14 @@ always_comb begin
 end
 
 // WRITE BLOCK
-always_ff @(posedge clk or negedge rst) begin
+always_ff @(negedge clk or negedge rst) begin
     if (!rst) begin
         integer i;
         for (i = 0; i < DEPTH; i = i + 1) begin
             file[i] <= '0;
         end
     end else if (we) begin
-        file[a1] <= wdata;
+        file[a2] <= wdata;
     end
 end
 

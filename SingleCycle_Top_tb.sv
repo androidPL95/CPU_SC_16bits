@@ -43,27 +43,6 @@ module SingleCycle_Top_tb import typedefs::*;
 
     // Test sequence
     initial begin
-	 
-		//force uut.control_block.op = ADD;
-		// Force specific values to the inst_mem file array
-		//
-		force uut.inst_mem.file[0] = 16'b0110000000000000;
-		force uut.inst_mem.file[1] = 16'b0111000000000001;
-		force uut.inst_mem.file[2] = 16'b0110000000010111;
-		force uut.inst_mem.file[3] = 16'b0000001111111111;
-		force uut.inst_mem.file[4] = 16'b0110000000010111;
-		force uut.inst_mem.file[5] = 16'b0110000000011111;
-		force uut.inst_mem.file[6] = 16'b0000000000000110;
-		force uut.inst_mem.file[7] = 16'b0110000000010000;
-		force uut.inst_mem.file[8] = 16'b0110000000011111;
-		force uut.inst_mem.file[9] = 16'b0000000000001011;
-		force uut.inst_mem.file[10] = 16'b0110000000010001;
-		force uut.inst_mem.file[11] = 16'b0110000000010000;
-		force uut.inst_mem.file[12] = 16'b0111000000010111;
-		force uut.inst_mem.file[13] = 16'b0000001011110111;
-		force uut.inst_mem.file[14] = 16'b0110000000010111;
-		force uut.inst_mem.file[15] = 16'b0110000000010001;
-		force uut.inst_mem.file[16] = 16'b0110000010100000;
 		
         // Initialize Inputs
         RST = 1;
@@ -87,25 +66,6 @@ module SingleCycle_Top_tb import typedefs::*;
 		// Wait for some time to observe the forced values
 		#(CLK_PERIOD * 20);
 
-  // Release the forced values
-		  //release uut.op;
-//        release uut.inst_mem.file[0];
-//        release uut.inst_mem.file[1];
-//        release uut.inst_mem.file[2];
-//        release uut.inst_mem.file[3];
-//        release uut.inst_mem.file[4];
-//        release uut.inst_mem.file[5];
-//        release uut.inst_mem.file[6];
-//        release uut.inst_mem.file[7];
-//		  release uut.inst_mem.file[8];
-//        release uut.inst_mem.file[9];
-//        release uut.inst_mem.file[10];
-//        release uut.inst_mem.file[11];
-//        release uut.inst_mem.file[12];
-//        release uut.inst_mem.file[13];
-//        release uut.inst_mem.file[14];
-//        release uut.inst_mem.file[15];
-//		  release uut.inst_mem.file[16];
 
         // Additional test cases can be added here
 

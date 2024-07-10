@@ -64,9 +64,6 @@ module SingleCycle_Top import typedefs::*;
 		.mem_bypass(mem_bypass)
 	);
 	
-	assign HEX2 = op;
-	assign HEX1 = {sel_pc, sum_imm, store_pc, reg_we, alu_imm, alu_ctrl, alu_bypass, alu_feedback_in, mem_we, mem_bypass};
-	
 	Mux2x1 feedback_mux(
 		.a(rd1), 
 		.b(aux_out), 
@@ -94,8 +91,6 @@ module SingleCycle_Top import typedefs::*;
 		.rst(RST), 
 		.out(pc_out)
 	);
-	
-	assign HEX0 = pc_out[7:0];
 	
 	
 	Mem inst_mem(
@@ -156,9 +151,9 @@ module SingleCycle_Top import typedefs::*;
 		.out(mem_out),
 		
 		.leds(LEDS),
-		//.hex0(HEX0),
-		//.hex1(HEX1),
-		//.hex2(HEX2),
+		.hex0(HEX0),
+		.hex1(HEX1),
+		.hex2(HEX2),
 		.hex3(HEX3),
 		.hex4(HEX4),
 		.hex5(HEX5),

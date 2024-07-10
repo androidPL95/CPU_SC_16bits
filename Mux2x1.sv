@@ -6,7 +6,7 @@ module Mux2x1
   output [15:0] out 
 );
 
-logic aux;
+logic [15:0] aux;
 
 assign out = aux;
 
