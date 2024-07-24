@@ -10,29 +10,12 @@ module SingleCycle_Top_tb import typedefs::*;
     // Inputs
     reg CLK;
     reg RST;
-    reg [9:0] SW;
 
-    // Outputs
-    wire [9:0] LEDS;
-    wire [7:0] HEX0;
-    wire [9:0] HEX1;
-    wire [5:0] HEX2;
-    wire [7:0] HEX3;
-    wire [7:0] HEX4;
-    wire [7:0] HEX5;
 
     // Instantiate the Unit Under Test (UUT)
     SingleCycle_Top uut (
         .CLK(CLK),
         .RST(RST),
-        .SW(SW),
-        .LEDS(LEDS),
-        .HEX0(HEX0),
-        .HEX1(HEX1),
-        .HEX2(HEX2),
-        .HEX3(HEX3),
-        .HEX4(HEX4),
-        .HEX5(HEX5)
     );
 
     // Clock generation
@@ -54,14 +37,6 @@ module SingleCycle_Top_tb import typedefs::*;
         #(CLK_PERIOD * 2);
         RST = 1;
 
-//        // Apply stimulus
-//        SW = 10'b0000000001;
-//        #(CLK_PERIOD * 10);
-//        SW = 10'b0000000010;
-//        #(CLK_PERIOD * 10);
-//        SW = 10'b0000000100;
-//        #(CLK_PERIOD * 10);
-
 		
 		// Wait for some time to observe the forced values
 		#(CLK_PERIOD * 20);
@@ -72,12 +47,6 @@ module SingleCycle_Top_tb import typedefs::*;
         // End simulation
         #(SIM_TIME);
         $finish;
-    end
-
-    // Monitor outputs
-    initial begin
-        $monitor("Time: %0t | CLK = %b | RST = %b | SW = %b | LEDS = %b | HEX0 = %h | HEX1 = %h | HEX2 = %h | HEX3 = %h | HEX4 = %h | HEX5 = %h", 
-                 $time, CLK, RST, SW, LEDS, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     end
 
 endmodule

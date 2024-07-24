@@ -83,3 +83,5 @@ set_location_assignment PIN_E14 -to LEDS[6]
 set_location_assignment PIN_D14 -to LEDS[7]
 set_location_assignment PIN_A11 -to LEDS[8]
 set_location_assignment PIN_B11 -to LEDS[9]
+set_global_assignment -name SYSTEMVERILOG_FILE Pipeline_Stage1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Pipeline_Stage2.sv

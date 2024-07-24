@@ -2,14 +2,6 @@ module SingleCycle_Top import typedefs::*;
 (
 	input				CLK	,
 	input				RST	,
-	input	 [9:0]	SW		,
-	output [9:0]	LEDS	,
-	output [7:0]	HEX0	,
-	output [9:0]	HEX1	,
-	output [5:0]	HEX2	,
-	output [7:0]	HEX3	,
-	output [7:0]	HEX4	,
-	output [7:0]	HEX5
 );
 
 	/************************
@@ -150,14 +142,6 @@ module SingleCycle_Top import typedefs::*;
 		.rst(RST),
 		.out(mem_out),
 		
-		.leds(LEDS),
-		.hex0(HEX0),
-		.hex1(HEX1),
-		.hex2(HEX2),
-		.hex3(HEX3),
-		.hex4(HEX4),
-		.hex5(HEX5),
-		.switchs(SW)
 	);
 
 	Mux2x1 mem_bypass_mux(
