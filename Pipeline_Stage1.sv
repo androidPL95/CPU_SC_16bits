@@ -1,4 +1,4 @@
-module pipeline_register_1
+module Pipeline_Stage1
 #(
 	parameter WIDTH = 16
 )

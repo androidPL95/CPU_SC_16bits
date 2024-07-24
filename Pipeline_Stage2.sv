@@ -1,4 +1,4 @@
-module pipeline_register_2 import typedefs::*;
+module Pipeline_Stage2 import typedefs::*;
 #(
 	parameter WIDTH = 16
 )
