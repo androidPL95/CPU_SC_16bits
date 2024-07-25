@@ -3,6 +3,11 @@ module Pipeline_Stage4
     input clk,
     input rst,
 
+    input logic reg_we_in,
+	input logic store_pc_in,
+    output logic reg_we_out,
+	output logic store_pc_out,
+
     input mux_in,
     output mux_out,
 

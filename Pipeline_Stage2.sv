@@ -6,6 +6,9 @@ module Pipeline_Stage2 import typedefs::*;
 	input logic clk,
 	input logic reset,
 	input logic enable,
+
+	input logic reg_we_in,
+	input logic store_pc_in,
 	
 	input logic in_branch,
 	input logic in_ALU_bypass,
@@ -19,6 +22,9 @@ module Pipeline_Stage2 import typedefs::*;
 	input logic [WIDTH-1:0] in_RD2,
 	input logic [WIDTH-1:0] in_immmux,
 	input logic [WIDTH-1:0] in_wa,
+
+	output logic reg_we_out,
+	output logic store_pc_out,
 	
 	output logic out_branch,
 	output logic out_ALU_bypass,
