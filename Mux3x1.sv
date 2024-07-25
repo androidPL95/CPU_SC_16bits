@@ -18,7 +18,7 @@ always_comb begin
         2'b10:
             out = c;
         default:
-            out = 'x;
+            out = 'X;
     endcase
 end
 

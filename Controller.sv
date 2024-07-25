@@ -2,17 +2,17 @@ module Controller import typedefs::*;
 (
     input  logic        clk       ,
     input  opcode_t     op        ,
-    input  logic        comp      ,
     output logic        sel_PC    ,
-    output logic        sum_imm   ,
     output logic        store_pc  ,
     output logic        reg_we    ,
     output logic        alu_imm   ,
     output alu_opcode_t alu_ctrl  ,
     output logic        alu_bypass,
-	 output logic			alu_feedback_in,
+	output logic		alu_feedback_in,
     output logic        mem_we    ,
-    output logic        mem_bypass
+    output logic        mem_bypass,
+    output logic        branch    ,
+    output logic        jump
 );
 
 always_comb begin
@@ -21,357 +21,352 @@ always_comb begin
 
         ADD  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;
+            branch     = '0;
+            jump       = '0;      
         end
 
         SUB  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_SUB;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;
+            branch     = '0;
+            jump       = '0;     
         end
 
         NOT : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_NOT;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         AND  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_AND;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0; 
+            branch     = '0;
+            jump       = '0;        
         end
 
         OR   : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_OR;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         XOR  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_XOR;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         SLL  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_SLL;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0; 
+            branch     = '0;
+            jump       = '0;        
         end
 
         SRL  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_SRL;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;     
+            branch     = '0;
+            jump       = '0;    
         end
 
         SRA  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_SRA;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         ADDI : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '1;
+			alu_feedback_in = '1;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;    
+            branch     = '0;
+            jump       = '0;     
         end
 
         LUI  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
             alu_ctrl   = ALU_BSL;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0; 
+            branch     = '0;
+            jump       = '0;        
         end
 
         ANDI : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
             alu_ctrl   = ALU_AND;
             alu_bypass = '0;
-				alu_feedback_in = '1;
+			alu_feedback_in = '1;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0; 
+            branch     = '0;
+            jump       = '0;        
         end
 
         ORI  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
             alu_ctrl   = ALU_OR;
             alu_bypass = '0;
-				alu_feedback_in = '1;
+			alu_feedback_in = '1;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         XORI : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '1;
             alu_ctrl   = ALU_XOR;
             alu_bypass = '0;
-				alu_feedback_in = '1;
+			alu_feedback_in = '1;
             mem_we     = '0;
-            mem_bypass = '0;        
+            mem_bypass = '0;  
+            branch     = '0;
+            jump       = '0;       
         end
 
         BEQ  : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = EQ;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BNE  : begin
             sel_PC     = '0;
-            if(comp == '0) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = EQ;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BGT  : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GRT;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BLT  : begin
             sel_PC     = '0;
-            if(comp == '0) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GRT;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BGE  : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTE;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BLE : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = LTE;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BGTU : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTU;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BLTU : begin
             sel_PC     = '0;
-            if(comp == '0) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GTU;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BGEU : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = GEU;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         BLEU : begin
             sel_PC     = '0;
-            if(comp == '1) 
-                sum_imm = '1;
-            else
-                sum_imm = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = LEU;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             alu_bypass = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '1;
+            jump       = '0; 
         end
 
         JAL  : begin
             sel_PC     = '1;
-            sum_imm    = '0;
             store_pc   = '1;
             reg_we     = '1;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '0;
+            jump       = '1; 
         end
 
         // Instead of summing the value of the aux with imm
@@ -381,15 +376,16 @@ always_comb begin
         // ADDRESS A1
         LW   : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '1;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '0;
+            jump       = '0; 
         end
 
         //LB   :
@@ -401,41 +397,44 @@ always_comb begin
         // SPECIFIED BY AUXILIARY
         SW   : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '1;
             mem_bypass = '0;
+            branch     = '0;
+            jump       = '0; 
         end
 
         LAD  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '1;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '0;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '1;
+            branch     = '0;
+            jump       = '0; 
         end
 
         LOA  : begin
             sel_PC     = '0;
-            sum_imm    = '0;
             store_pc   = '0;
             reg_we     = '0;
             alu_imm    = '0;
             alu_ctrl   = ALU_ADD;
             alu_bypass = '1;
-				alu_feedback_in = '0;
+			alu_feedback_in = '0;
             mem_we     = '0;
             mem_bypass = '0;
+            branch     = '0;
+            jump       = '0; 
         end
 
     endcase
