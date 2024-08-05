@@ -93,16 +93,17 @@ CounterMem #(.NUM_EXC(NUM_INT)) HandlerAddrMem (
     .excpt_addr(handler_addr)
 );
 
-// Racing Condition? probably, but let's try anyway
 always_ff @(posedge clk or negedge rst) begin
     if (!rst) begin
+        rtrn_addr_out <= '0;
         executing_int <= '0;
     end
-    else if( (ier_out[NUM_INT] && (|excpt_en[NUM_INT-1:0])) && executing_int == '0) begin
+    else if (end_routine) begin
+        executing_int <= '0;
+    end
+    else if(clk && (ier_out[NUM_INT] && (|excpt_en[NUM_INT-1:0])) && executing_int == '0) begin
+        rtrn_addr_out <= rtrn_addr_in;
         executing_int <= '1;
-    end
-    else if( ((end_routine == '1) && !(|excpt_en[NUM_INT-1:0])) && executing_int == '1 ) begin
-        executing_int <= '0;
     end
 end
 
